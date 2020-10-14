@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "770997927531",
+    "firebase_url": "https://ihc-admission-assistant.firebaseio.com",
+    "project_id": "ihc-admission-assistant",
+    "storage_bucket": "ihc-admission-assistant.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770997927531:android:41ab365fba5bef07dd3b2e",
+        "android_client_info": {
+          "package_name": "com.yasser.ihcg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770997927531-4dica0hm5ia6m79bgm3o1nv29ltqr1ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdfEodMUk6919brRvO8r5q-qO52CyvEug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770997927531-4dica0hm5ia6m79bgm3o1nv29ltqr1ju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

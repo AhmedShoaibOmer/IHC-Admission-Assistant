@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_about_university">
+
+    <fragment
+        android:id="@+id/nav_about_university"
+        android:name="com.yasser.ihcg.ui.home.AboutUniversityFragment"
+        android:label="@string/menu_about_university"
+        tools:layout="@layout/fragment_about_university" />
+
+    <fragment
+        android:id="@+id/nav_tips"
+        android:name="com.yasser.ihcg.ui.tips.TipsFragment"
+        android:label="@string/menu_tips"
+        tools:layout="@layout/fragment_tips" />
+
+    <fragment
+        android:id="@+id/nav_guide"
+        android:name="com.yasser.ihcg.ui.guide.GuideFragment"
+        android:label="@string/menu_guide"
+        tools:layout="@layout/fragment_guide" />
+
+
+    <fragment
+        android:id="@+id/nav_submit"
+        android:name="com.yasser.ihcg.ui.submit.SubmitFragment"
+        android:label="@string/menu_submit"
+        tools:layout="@layout/fragment_submit" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.yasser.ihcg.ui.notifications.NotificationsFragment"
+        android:label="@string/menu_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.yasser.ihcg.ui.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
+
+
+</navigation>

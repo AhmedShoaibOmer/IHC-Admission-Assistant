@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFf">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        android:paddingTop="32dp"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="16dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="كلية الامام الهادي كلية سودانية نشأت كمؤسسة الامام الهادي للدراسات الاسلامية في عام 1996م ثم تطور المعهد الي مركز الامام الهادي للدراسات الاضافية وعلوم الحاسوب في عام 1999م .    \n ونسبة للاداء المتميز تم التصديق بقيام كلية الامام الهادي في م 28/5/2002 وتدار بعدد من الاكاديميين والتربويين من ذوي الخبرة والاختصاص في مجال التعليم العالي بوجه عام وفي مجال التعليم الاهلي علي وجه الخصوص. وتسعي المؤسسة جادة في ارساء قواعد اكاديمية متينة في مجال العلوم الإنسانية والتطبيقية واللغات وهدفها تقديم دراسة متميزة تعتمد علي تكامل العلوم والحوسبة ووسائل الاتصال الحديثة مما يجعل خريجيها متميزين عن غيرهم ومواكبين للطفرة العلمية الحديثة. وبما ان المؤسسة من اهدافها تفعيل برامج احتياجات البلاد لتكون مخرجاتها كوادر مؤهلة لخدمة انسان هذا الوطن وتتجاوز ذلك بالإسهام في البحث العلمي هيأت واعدت هذه البرامج ليكون الخريج إضافة حقيقية لخدمة البشرية في اصقاع المعمورة لذا بدات مسيرة عطائها علي التخطيط السليم وحسن إدارة الامكانيات المتوفرة.    \n  كلية الامام الهادي مؤسسة غير ربحية لذا تبؤات مكانا مرموقا بين رصيفاتها لسد الفجوة بين الممكن والمستحيل في مجال العلوم الحديثة.    \n   تضم الكلية العديد من التخصصات قسم البكالوريوس و قسم الدبلومات التقنية ثلاثه سنوات وقابله للتصعيد من هذه التخصصات    \n   \n   البكالوريوس\n   \n   بكالوريوس الشرف في المختبرات الطبية (5سنوات ). \nبكالوريوس الشرف في التغذية العلاجية (5سنوات ).\nبكالوريوس الطب البيطري (5سنوات).\nبكالوريوس علوم التمريض (4سنوات).\nبكالوريوس الشرف في العلوم الإدارية (قسم المحاسبة – قسم إدارة الأعمال – قسم إدارة الموارد البشرية – قسم إدارة التسويق ).\nبكالوريوس الشرف في الاقتصاد والدراسات المصرفية والمالية :(قسم الاقتصاد-قسم الدراسات المالية والمصرفية ).\nبكالوريوس الأداب : (اللغة الإنجليزية – علوم الإتصال – علم النفس ).\nبكالوريوس اللغة اللعربية والدراسات الإسلامية.\nبكالوريوس الشرف في علوم الحاسوب (شهادة علمية).\nبكالوريوس الشرف في تقانة المعلومات (شهادة علمية -شهادة أدبية ).\nبكالوريوس السياحة والفندقة :(قسم الفندقة -قسم السياحة ).\nبكالوريوس الشريعة والقانون .\n\nالدبلومات التقنية (نظام الثلاث سنوات/قابل للتصعيد)\n\nدبلوم الهندسة الكهربائية (الحائز على الرقم الهندسي):\nهندسة الاتصالات – قسم هندسة الالات والاجهزة .\nقسم هندسة الإلكترونيات (شهادة علمية ).\nدبلوم الإعلام والعلاقات العامة .\nدبلوم علم النفس ورياض الاطفال .\nدبلوم تقنية المعلومات المحاسبية .\nدبلوم صيانة الحاسوب (الحائز على الرقم الهندسي ).\nدبلوم تقنية شبكات الحاسوب .\nدبلوم تقنية المعلومات الإدارية ."
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

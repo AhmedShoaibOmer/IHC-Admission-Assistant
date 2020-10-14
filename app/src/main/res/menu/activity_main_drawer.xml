@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about_university"
+            android:icon="@drawable/ic_school_black_24dp"
+            android:title="@string/menu_about_university" />
+        <item
+            android:id="@+id/nav_tips"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="@string/menu_tips" />
+        <item
+            android:id="@+id/nav_guide"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="@string/menu_guide" />
+
+        <item
+            android:id="@+id/nav_submit"
+            android:icon="@drawable/ic_check_circle_black_24dp"
+            android:title="@string/menu_submit" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="@string/menu_notifications" />
+
+    </group>
+
+    <item android:title="@string/extra">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_help_black_24dp"
+                android:title="@string/menu_about" />
+        </menu>
+
+    </item>
+
+</menu>

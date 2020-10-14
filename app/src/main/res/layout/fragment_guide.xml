@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clipToPadding="false"
+        android:paddingTop="32dp"
+        android:paddingBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="  دليل كلية الامام الهادي"
+                android:textColor="@color/colorPrimary"
+                android:textSize="40sp"
+                android:textStyle="" />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/guidef"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text=" \n   \n   البكالوريوس\n   \n   بكالوريوس الشرف في المختبرات الطبية (5سنوات ). \nبكالوريوس الشرف في التغذية العلاجية (5سنوات ).\nبكالوريوس الطب البيطري (5سنوات).\nبكالوريوس علوم التمريض (4سنوات).\nبكالوريوس الشرف في العلوم الإدارية (قسم المحاسبة – قسم إدارة الأعمال – قسم إدارة الموارد البشرية – قسم إدارة التسويق ).\nبكالوريوس الشرف في الاقتصاد والدراسات المصرفية والمالية :(قسم الاقتصاد-قسم الدراسات المالية والمصرفية ).\nبكالوريوس الأداب : (اللغة الإنجليزية – علوم الإتصال – علم النفس ).\nبكالوريوس اللغة اللعربية والدراسات الإسلامية.\nبكالوريوس الشرف في علوم الحاسوب (شهادة علمية).\nبكالوريوس الشرف في تقانة المعلومات (شهادة علمية -شهادة أدبية ).\nبكالوريوس السياحة والفندقة :(قسم الفندقة -قسم السياحة ).\nبكالوريوس الشريعة والقانون .\n\nالدبلومات التقنية (نظام الثلاث سنوات/قابل للتصعيد)\n\nدبلوم الهندسة الكهربائية (الحائز على الرقم الهندسي):\nهندسة الاتصالات – قسم هندسة الالات والاجهزة .\nقسم هندسة الإلكترونيات (شهادة علمية ).\nدبلوم الإعلام والعلاقات العامة .\nدبلوم علم النفس ورياض الاطفال .\nدبلوم تقنية المعلومات المحاسبية .\nدبلوم صيانة الحاسوب (الحائز على الرقم الهندسي ).\nدبلوم تقنية شبكات الحاسوب .\nدبلوم تقنية المعلومات الإدارية"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
