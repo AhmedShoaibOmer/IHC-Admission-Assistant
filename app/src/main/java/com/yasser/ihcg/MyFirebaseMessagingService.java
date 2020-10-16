@@ -67,7 +67,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         PendingIntent pendingIntent = new NavDeepLinkBuilder(this)
                 .setGraph(R.navigation.mobile_navigation)
-                .setDestination(R.id.nav_notification)
+                .setDestination(R.id.notificationDisplayActivity)
                 .setArguments(args)
                 .createPendingIntent();
 

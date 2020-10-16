@@ -34,19 +34,7 @@
         android:id="@+id/nav_notification"
         android:name="com.yasser.ihcg.ui.notifications.NotificationsFragment"
         android:label="@string/menu_notifications"
-        tools:layout="@layout/fragment_notifications">
-        <argument
-            android:name="title"
-            android:defaultValue=""
-            app:argType="String"
-            app:nullable="true" />
-
-        <argument
-            android:name="body"
-            android:defaultValue=""
-            app:argType="String"
-            app:nullable="true" />
-    </fragment>
+        tools:layout="@layout/fragment_notifications" />
 
 
     <fragment
@@ -54,6 +42,20 @@
         android:name="com.yasser.ihcg.ui.about.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
+
+    <activity
+        android:id="@+id/notificationDisplayActivity"
+        android:name="com.yasser.ihcg.ui.notifications.NotificationDisplayActivity"
+        android:label="NotificationDisplayActivity">
+        <argument
+            android:name="titleArg"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="bodyArg"
+            app:argType="string"
+            app:nullable="true" />
+    </activity>
 
 
 </navigation>
