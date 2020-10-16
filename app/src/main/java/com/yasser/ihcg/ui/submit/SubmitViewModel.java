@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel;
 public class SubmitViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
+    private MutableLiveData<StudentAdmissionDetails> _submissionDetails = new MutableLiveData<>();
+    public LiveData<StudentAdmissionDetails> submissionDetails = _submissionDetails;
 
     public SubmitViewModel() {
         mText = new MutableLiveData<>();
@@ -16,4 +18,9 @@ public class SubmitViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+
+    public void sendAdmission(StudentAdmissionDetails studentAdmission) {
+        _submissionDetails.setValue(studentAdmission);
+    }
+
 }
