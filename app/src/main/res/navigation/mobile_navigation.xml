@@ -34,7 +34,19 @@
         android:id="@+id/nav_notification"
         android:name="com.yasser.ihcg.ui.notifications.NotificationsFragment"
         android:label="@string/menu_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_notifications">
+        <argument
+            android:name="title"
+            android:defaultValue=""
+            app:argType="String"
+            app:nullable="true" />
+
+        <argument
+            android:name="body"
+            android:defaultValue=""
+            app:argType="String"
+            app:nullable="true" />
+    </fragment>
 
 
     <fragment

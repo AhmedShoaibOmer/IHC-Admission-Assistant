@@ -20,7 +20,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.yasser.ihcg.ui.submit.StudentAdmissionDetails;
 import com.yasser.ihcg.ui.submit.SubmitViewModel;
@@ -55,11 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
                         // Log and toast
                         Log.d(TAG, token);
-                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
                     }
                 });
 // ...
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        initFirestore();
 
         submitViewModel = ViewModelProviders.of(this).get(SubmitViewModel.class);
         submitViewModel.submissionDetails.observe(this, new Observer<StudentAdmissionDetails>() {
@@ -89,10 +87,16 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    private void initFirestore() {
+        mFirestore = FirebaseFirestore.getInstanse();
+    }
+
     private void writeNewUser(String name, String type, String degree, String section) {
+        CollectionReference students = mFirestore.collection("students");
         StudentAdmissionDetails sAD = new StudentAdmissionDetails(token, name, type, degree, section);
 
-        mDatabase.child("students").child(token).setValue(sAD);
+        students.add(sAD);
+        Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
     }
 
     @Override

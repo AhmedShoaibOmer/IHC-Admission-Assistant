@@ -1,15 +1,18 @@
 package com.yasser.ihcg;
 
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
+import androidx.navigation.NavDeepLinkBuilder;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -50,13 +53,26 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void sendLocalNotification(String notificationTitle, String notificationBody) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
-                PendingIntent.FLAG_ONE_SHOT);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("AdmissionId", "Admission Alarm", NotificationManager.IMPORTANCE_HIGH);
+            channel.setDescription("");
+            notificationManager.createNotificationChannel(channel);
+        }
+
+        Bundle args = new Bundle();
+        args.putString("title", notificationTitle);
+        args.putString("body", notificationBody);
+
+        PendingIntent pendingIntent = new NavDeepLinkBuilder(this)
+                .setGraph(R.navigation.mobile_navigation)
+                .setDestination(R.id.nav_notification)
+                .setArguments(args)
+                .createPendingIntent();
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, "AdmissionId")
                 .setAutoCancel(true)   //Automatically delete the notification
                 //.setSmallIcon(R.drawable.sigla4) //Notification icon
                 .setContentIntent(pendingIntent)
@@ -64,7 +80,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 .setContentText(notificationBody)
                 .setSound(defaultSoundUri);
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(1234, notificationBuilder.build());
     }
