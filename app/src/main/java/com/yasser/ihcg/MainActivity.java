@@ -17,9 +17,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
-import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.yasser.ihcg.ui.submit.StudentAdmissionDetails;
 import com.yasser.ihcg.ui.submit.SubmitViewModel;
@@ -29,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity OnCreate:";
     private AppBarConfiguration mAppBarConfiguration;
     private String token;
-    private DatabaseReference mDatabase;
     private SubmitViewModel submitViewModel;
+    private FirebaseFirestore mFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,15 +92,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFirestore() {
-        mFirestore = FirebaseFirestore.getInstanse();
+        mFirestore = FirebaseFirestore.getInstance();
     }
 
     private void writeNewUser(String name, String type, String degree, String section) {
         CollectionReference students = mFirestore.collection("students");
         StudentAdmissionDetails sAD = new StudentAdmissionDetails(token, name, type, degree, section);
 
-        students.add(sAD);
-        Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
+        students.add(sAD).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
+            }
+        })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this, "Connection Failed!", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
     }
 
     @Override
